@@ -1,0 +1,11 @@
+{% extends 'agency/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<img src="{{ view.picture.url }}"><br>
+{{ view.name}} <br>
+{{ view.location}}<br>
+{{ view.price}} <br>
+{{ view.bedroom}} <br>
+{{ view.description}}<br>
+{% endblock content %}
