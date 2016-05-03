@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Houses
 from .forms import add_houseForm
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 # Create your views here.
 def home_page(request):
@@ -13,9 +14,9 @@ def home_page(request):
 def add_house(request):
     form = add_houseForm(request.POST or None, request.FILES or None)
     if form.is_valid():
-    	instance = form.save(commit=False)
+        instance = form.save(commit=False)
         print form.cleaned_data.get('name') 
-    	instance.save()
+        instance.save()
         return HttpResponseRedirect(instance.get_absolute_url())
     return render (request, 'agency/new_post.html', {'form': form})
 
@@ -33,7 +34,7 @@ def update_house(request, pk=None):
         instance = form.save(commit=False)
         instance.save()
         return HttpResponseRedirect(instance.get_absolute_url())
-        
+
     context = {
         'view': instance,
         'form' : form,
