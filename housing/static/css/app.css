@@ -73,7 +73,7 @@
   width: 200px;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  /*-webkit-filter: grayscale(1);*/
+  -webkit-filter: grayscale(0);
   width: 100%;
 }
 

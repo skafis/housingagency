@@ -16,6 +16,7 @@ def add_house(request):
     form = add_houseForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         instance = form.save(commit=False)
+        # print form.cleaned_data.get('name') 
         instance.save()
         return HttpResponseRedirect(instance.get_absolute_url())
     return render (request, 'agency/new_post.html', {'form': form})
