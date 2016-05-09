@@ -2,15 +2,21 @@
 {% load staticfiles %}
 {% load urlify%}
 {% block content %}
-<img src="{{ view.picture.url }}"><br>
-{{ view.name}} <br>
-{{ view.location}}<br>
-{{ view.price}} <br>
-{{ view.bedroom}} <br>
-{{ view.description}}<br>
+<div class="row details">
+<div class="small-12 large-6 columns">
+	<img src="{{ view.picture.url }}"><br>
+</div>
+<div class="small-12 large-6 columns">
+	<h1>{{ view.name}}</h1> <br>
+	<p>{{ view.description}}</p><br>
+	<p> it is a {{ view.bedrooms }} bedroom house and located on {{ view.location}}<p>
+	<p> the house costs ${{ view.price}} <br>
+	
+	
+</div>
 
-{{ view.description|urlify }}
+<!-- {{ view.description|truncatechars:10 |urlify }} -->
 
-{{share_string}}
+<!-- {{share_string}} -->
 <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">share on facebok</a>
 {% endblock content %}
