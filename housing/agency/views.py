@@ -21,8 +21,8 @@ def add_house(request):
         return HttpResponseRedirect(instance.get_absolute_url())
     return render (request, 'agency/new_post.html', {'form': form})
 
-def house_detail(request, slug=None):
-    instance = get_object_or_404(Houses, slug=slug)
+def house_detail(request, pk):
+    instance = get_object_or_404(Houses, pk=pk)
     share_string = quote_plus(instance.description)
     context = {
         'view' : instance,
@@ -30,8 +30,8 @@ def house_detail(request, slug=None):
     }
     return render(request, 'agency/house_detail.html', context)
 
-def update_house(request, slug=None):
-    instance = get_object_or_404(Houses, slug=slug)
+def update_house(request, pk=None):
+    instance = get_object_or_404(Houses, pk=pk)
     form = add_houseForm(request.POST or None, request.FILES or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
@@ -43,7 +43,7 @@ def update_house(request, slug=None):
         'form' : form,
     }
     return render(request, 'agency/new_post.html', context)
-def delete_house(request, slug=None):
-    instance = get_object_or_404(Houses, slug=slug)
+def delete_house(request, pk=None):
+    instance = get_object_or_404(Houses, pk=pk)
     instance.delete()
     return redirect ('index.html')
