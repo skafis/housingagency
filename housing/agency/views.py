@@ -1,3 +1,4 @@
+from urllib import quote_plus
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Houses
 from .forms import add_houseForm
@@ -20,15 +21,17 @@ def add_house(request):
         return HttpResponseRedirect(instance.get_absolute_url())
     return render (request, 'agency/new_post.html', {'form': form})
 
-def house_detail(request, pk):
-    view = get_object_or_404(Houses, pk=pk)
+def house_detail(request, slug=None):
+    instance = get_object_or_404(Houses, slug=slug)
+    share_string = quote_plus(instance.description)
     context = {
-        'view' : view
+        'view' : instance,
+        'share_string': share_string,
     }
     return render(request, 'agency/house_detail.html', context)
 
-def update_house(request, pk=None):
-    instance = get_object_or_404(Houses, pk=pk)
+def update_house(request, slug=None):
+    instance = get_object_or_404(Houses, slug=slug)
     form = add_houseForm(request.POST or None, request.FILES or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
@@ -40,7 +43,7 @@ def update_house(request, pk=None):
         'form' : form,
     }
     return render(request, 'agency/new_post.html', context)
-def delete_house(request, pk=None):
-    instance = get_object_or_404(Houses, pk=pk)
+def delete_house(request, slug=None):
+    instance = get_object_or_404(Houses, slug=slug)
     instance.delete()
     return redirect ('index.html')

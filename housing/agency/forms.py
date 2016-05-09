@@ -6,7 +6,7 @@ class add_houseForm(forms.ModelForm):
 		model = Houses
 		fields = [
 			'picture',
-			'name', 
+			'name',
 			'location', 
 			'price',
 			'bedrooms',

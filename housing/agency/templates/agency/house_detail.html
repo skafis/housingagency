@@ -1,6 +1,6 @@
 {% extends 'agency/base.html' %}
 {% load staticfiles %}
-
+{% load urlify%}
 {% block content %}
 <img src="{{ view.picture.url }}"><br>
 {{ view.name}} <br>
@@ -8,4 +8,9 @@
 {{ view.price}} <br>
 {{ view.bedroom}} <br>
 {{ view.description}}<br>
+
+<!-- {{ view.description|urlify }} -->
+
+{{share_string}}
+<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">share on facebok</a>
 {% endblock content %}
