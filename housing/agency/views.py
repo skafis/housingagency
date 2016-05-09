@@ -1,4 +1,13 @@
-from urllib import quote_plus
+try:
+    from urllib import quote_plus #python 2
+except:
+    pass
+
+try:
+    from urllib.parse import quote_plus #python 3
+except: 
+    pass
+    
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Houses
 from .forms import add_houseForm
