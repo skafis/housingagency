@@ -1,10 +1,14 @@
+
 .header {
   text-align: center;
   background: url("https://static.pexels.com/photos/32870/pexels-photo.jpg") no-repeat;
   background-size: cover;
   padding: 4rem; }
   .header .main-header {
-    color: #666; }
+    /*color: #666;*/
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 800;  
+  }
 
 .header-subnav {
   float: none;
@@ -95,6 +99,15 @@ p {
   margin: 20 auto;
   width: 300;
   height: 300;
+}
+
+form{
+  width: 80%;
+  margin-left: 1rem;
+
+}
+form #id_bedrooms{
+  float: right;
 }
 
 
