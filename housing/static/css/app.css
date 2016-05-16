@@ -5,9 +5,9 @@
   background-size: cover;
   padding: 4rem; }
   .header .main-header {
-    /*color: #666;*/
+    color: #666;
     font-family: 'Alegreya Sans', sans-serif;
-    font-weight: 800;  
+    font-weight: 800;
   }
 
 .header-subnav {
