@@ -1,5 +1,5 @@
 from django import forms
-from .models import Houses, Contact
+from .models import Houses
 
 class add_houseForm(forms.ModelForm):
 	class Meta:
@@ -13,11 +13,3 @@ class add_houseForm(forms.ModelForm):
 			'description',
 			]
 		
-class contactForm(forms.ModelForm):
-	class Meta:
-		model = Contact
-		fields = [
-			'name',
-			'email',
-			'message',
-		]

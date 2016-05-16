@@ -12,12 +12,11 @@
 	<p> it is a {{ view.bedrooms }} bedroom house and located on {{ view.location}}<p>
 	<p> the house costs ${{ view.price}} <br>
 	
+	
 </div>
 
 <!-- {{ view.description|truncatechars:10 |urlify }} -->
 
 <!-- {{share_string}} -->
 <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">share on facebok</a>
-
-<button> Edit</button>
 {% endblock content %}

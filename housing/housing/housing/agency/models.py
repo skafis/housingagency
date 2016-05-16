@@ -32,7 +32,7 @@ class Houses(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("post", kwargs={'slug': self.slug})
+        return reverse("post", kwargs={'pk': self.pk})
 
 def  create_slug(instance,new_slug = None):
     slug = slugify(instance.name)
@@ -51,14 +51,3 @@ def pre_save_receiver(sender, instance, *args, **kwargs):
         instance.slug = create_slug(instance)
 
 pre_save.connect(pre_save_receiver, sender=Houses)
-
-class Contact(models.Model):
-    name = models.CharField(max_length = 140, null=False)
-    email = models.CharField(max_length = 140,null=False, verbose_name='e-mail')
-    message= models.TextField(null=False)
-
-    def __unicode__(self):
-        return self.name
-
-    def __str__(self):
-        return self.name
