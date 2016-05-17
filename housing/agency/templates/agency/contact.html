@@ -1,1 +1,10 @@
-lolo
+{% extends 'agency/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>Contact Me </h1>
+    <form method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="success button">Save</button>
+    </form>
+{% endblock %}

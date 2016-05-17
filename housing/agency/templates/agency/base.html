@@ -14,6 +14,9 @@
         <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/app.css' %}">
 
+        {% block extended_head %}
+        {% endblock %}
+
     </head>
 <body>
     <header>
@@ -23,7 +26,7 @@
             <li><a href="{% url 'home' %}" class="is-active">Home</a></li>
             <li><a href="{% url 'add' %}">Add new</a></li>
             <li><a target="_blank" href="https://github.com/skafis">About us</a></li>
-            <li><a target="_blank" href="https://github.com/skafis">Contact us</a></li>
+            <li><a href="{% url 'contact' %}">Contact us</a></li>
           </ul>
         </header>
     </header>
@@ -48,8 +51,8 @@
     </div>
     <div class="small-12 medium-6 large-4 columns">
       <ul class="contact">
-        <li><p><i class="fi-marker"></i>skafis.github.io</p></li>
-        <li><p><i class="fi-telephone"></i>+254724681326</p></li>
+        <li><p><i class="fi-marker"></i><a href = "https://github.com/skafis"> skafis.github.io </p></li>
+        <li><p><i class="fi-telephone"></i>+254731645955</p></li>
         <li><p><i class="fi-mail"></i>franciskipchumba5@gmail.com</p></li>
       </ul>
     </div>

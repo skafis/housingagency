@@ -5,7 +5,7 @@
   background-size: cover;
   padding: 4rem; }
   .header .main-header {
-    /*color: #666;*/
+    color: #666;
     font-family: 'Alegreya Sans', sans-serif;
     font-weight: 800;  
   }
@@ -120,7 +120,8 @@ footer
   background-color: #292c2f;
   text-align: center;
   font-size: 1.2rem;
-  padding: 4rem; }
+  padding: 4rem;
+   }
   .footer .inline-list a {
     display: inline-block;
     width: 2rem;
@@ -172,6 +173,9 @@ footer
     .footer .footer-links a:last-child::after {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
+    .footer .contact a{
+      color: #666;
+    }
   @media only screen and (min-width: 40.063em) {
     .footer p {
       text-align: left; }

@@ -58,7 +58,13 @@ def delete_house(request, slug=None):
     return redirect ('index.html')
 
 def contact(request):
-    context ={
+    form = contactForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return render (request, 'agency/index.html')
 
+    context ={
+    'form' : form,
     }
-    return render (request, agency/contact.html, context)
+    return render (request, 'agency/contact.html', context)
