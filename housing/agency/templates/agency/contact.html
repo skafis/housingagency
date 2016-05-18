@@ -1,10 +1,21 @@
 {% extends 'agency/base.html' %}
 {% load staticfiles %}
 
+{% block extended_head %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>Contact Me </h1>
-    <form method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
-        {{ form.as_p }}
+   <section>
+    <h1>Contact Me </h1>
+ 
+        <form method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
+        <div class="field">
+            {{ form.as_p }}
+        </div>
+        
         <button type="submit" class="success button">Save</button>
     </form>
+    </section>
+    <
 {% endblock %}
