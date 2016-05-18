@@ -1,6 +1,9 @@
 Django==1.9.5
+Pillow==3.2.0
+argparse==1.2.1
 django-allauth==0.25.2
 oauthlib==1.1.1
 python-openid==2.2.5
 requests==2.10.0
 requests-oauthlib==0.6.1
+wsgiref==0.1.2
