@@ -14,6 +14,9 @@ from .forms import add_houseForm, contactForm
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 
 # Create your views here.
+def intro_page (request):
+    return render (request, 'agency/home.html')
+
 def home_page(request):
     view = Houses.objects.order_by('-timestamp')
     context = {
@@ -68,3 +71,4 @@ def contact(request):
     'form' : form,
     }
     return render (request, 'agency/contact.html', context)
+

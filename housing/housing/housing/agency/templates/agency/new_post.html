@@ -1,9 +1,0 @@
-{% extends 'agency/base.html' %}
-
-{% block content %}
-<h1>Add new</h1>
-	<form method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
-		{{ form.as_p }}
-        <button type="submit" class="success button">Save</button>
-	</form>
-{% endblock %}

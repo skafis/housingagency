@@ -193,3 +193,21 @@ footer
   .logo i {
     margin-right: 0.5rem; }
 
+.intro{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.intro img{
+  width: 100vw;
+}
+
+.intro input{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50rem;
+  transform: translate(-50%, -50%);
+}
+
