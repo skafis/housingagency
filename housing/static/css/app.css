@@ -201,6 +201,10 @@ footer
 
 .intro img{
   width: 100vw;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(100px);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
 }
 
 .intro input{
@@ -211,3 +215,18 @@ footer
   transform: translate(-50%, -50%);
 }
 
+.search .buy button{
+  position: absolute;
+  width: 25rem;
+  top: 45%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+}
+
+.search .rent button{
+  position: absolute;
+  width: 25rem;
+  top: 45%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+}
