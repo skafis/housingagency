@@ -201,7 +201,7 @@ footer
 
 .intro img{
   width: 100vw;
-  -webkit-filter: blur(10px);
+  -webkit-filter: blur(0px);
   -moz-filter: blur(100px);
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -209,24 +209,32 @@ footer
 
 .intro input{
   position: absolute;
+  height: 3rem;
   top: 50%;
   left: 50%;
   width: 50rem;
   transform: translate(-50%, -50%);
 }
 
-.search .buy button{
+.search .buy .button{
   position: absolute;
+  height: 3rem;
   width: 25rem;
-  top: 45%;
+  top: 43%;
   left: 37%;
+  border-right:  :solid; 
   transform: translate(-50%, -50%);
 }
 
-.search .rent button{
+.search .rent .button{
   position: absolute;
+  height: 3rem;
   width: 25rem;
-  top: 45%;
+  top: 43%;
   left: 63%;
+  border-left: solid;
   transform: translate(-50%, -50%);
+}
+.content{
+  height: 20vh;
 }
