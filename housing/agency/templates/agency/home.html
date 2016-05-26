@@ -30,15 +30,21 @@
   <div id="responsive-menu">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
-        <li><a href="#">One</a></li>
-        <li><a href="#">Two</a></li>
-        <li><a href="#">Three</a></li>
+        <li><a href="{% url 'home' %}" class="is-active">Home</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'add' %}">Add new</a></li>
+       {% endif %}
+       <li><a href="{% url 'contact' %}">Contact us</a></li>
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><input type="search" placeholder="Search"></li>
-        <li><button type="button" class="button">Search</button></li>
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li><a href="{% url 'account_signup' %}">SignUp</a></li>
+            {% endif %}
       </ul>
     </div>
   </div>
@@ -50,9 +56,13 @@
         <label class="buy"> <button type="button" class="button">Buy</button> </label> 
         <label class="rent"> <button type="button" class="button">Rent</button> </label> 
         <input type="search" placeholder="Search">
+        <a href="{% url 'home' %}"> <label class="start"> <button type="button" class="button">START</button></label></a>
     </div>
+    
+
 </div>
-<div class="content">
+<!-- <div class="content"> -->
+<!-- <button type="button" class="success button"></button> -->
 <p> hjonj</p>  
 </div>
 

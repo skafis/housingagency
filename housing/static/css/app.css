@@ -235,6 +235,13 @@ footer
   border-left: solid;
   transform: translate(-50%, -50%);
 }
+.search .start .button{
+  position: absolute;
+  width: 8rem;
+  height: 3rem;
+  top: 80%;
+  left: 45%;
+}
 .content{
-  height: 20vh;
+  height: 50vh;
 }

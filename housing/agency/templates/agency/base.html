@@ -25,14 +25,24 @@
           <ul class="header-subnav">
             <li><a href="{% url 'home' %}" class="is-active">Home</a></li>
             <li><a href="{% url 'add' %}">Add new</a></li>
-            <li><a target="_blank" href="https://github.com/skafis">About us</a></li>
+            <!-- <li><a target="_blank" href="https://github.com/skafis">About us</a></li> -->
             <li><a href="{% url 'contact' %}">Contact us</a></li>          
-            {% if request.user.is_authenticated %}
+            <!-- {% if request.user.is_authenticated %}
+            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li><a href="{% url 'account_signup' %}">SignUp</a></li>
+            {% endif %} -->
+            <div class="top-bar-right">
+      <ul class="menu">
+        {% if request.user.is_authenticated %}
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
             {% else %}
             <li><a href="{% url 'account_login' %}">Login</a></li>
             <li><a href="{% url 'account_signup' %}">SignUp</a></li>
             {% endif %}
+      </ul>
+    </div>
           </ul>
         </header>
     </header>
