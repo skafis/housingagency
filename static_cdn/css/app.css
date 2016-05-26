@@ -193,3 +193,55 @@ footer
   .logo i {
     margin-right: 0.5rem; }
 
+.intro{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.intro img{
+  width: 100vw;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(100px);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+}
+
+.intro input{
+  position: absolute;
+  height: 3rem;
+  top: 50%;
+  left: 50%;
+  width: 50rem;
+  transform: translate(-50%, -50%);
+}
+
+.search .buy .button{
+  position: absolute;
+  height: 3rem;
+  width: 25rem;
+  top: 43%;
+  left: 37%;
+  border-right:  :solid; 
+  transform: translate(-50%, -50%);
+}
+
+.search .rent .button{
+  position: absolute;
+  height: 3rem;
+  width: 25rem;
+  top: 43%;
+  left: 63%;
+  border-left: solid;
+  transform: translate(-50%, -50%);
+}
+.search .start .button{
+  position: absolute;
+  width: 8rem;
+  height: 3rem;
+  top: 80%;
+  left: 45%;
+}
+.content{
+  height: 50vh;
+}

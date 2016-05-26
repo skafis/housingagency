@@ -35,7 +35,7 @@ form .field {
     margin-bottom: 15px;
 }
 
-form .field label {
+form .field name {
     text-transform: uppercase;
     position: absolute;
     top: 0;
@@ -52,7 +52,7 @@ form .field label {
     transition: all 333ms ease-in-out;
 }
 
-form .field label + span {
+form .field name + span {
     font-family: 'SSStandard';
     opacity: 0;
     color: white;
