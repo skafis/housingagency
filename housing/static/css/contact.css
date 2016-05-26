@@ -83,8 +83,8 @@ form .field textarea {
     text-transform: uppercase;
 }
 
-form .field input[type="text"]#msg,
-form .field textarea#msg {
+form .field input[type="text"]#id_message,
+form .field textarea#id_message {
     height: 18px;
     resize: none;
     -webkit-transition: all 333ms ease-in-out;
@@ -101,10 +101,10 @@ form .field textarea.focused {
     outline: none;
 }
 
-\\ form .field input[type="text"]:focus#msg,
-form .field input[type="text"].focused#msg,
-form .field textarea:focus#msg,
-form .field textarea.focused#msg {
+\\ form .field input[type="text"]:focus#id_message,
+form .field input[type="text"].focused#id_message,
+form .field textarea:focus#id_message,
+form .field textarea.focused#id_message {
     padding-bottom: 150px;
 }
 

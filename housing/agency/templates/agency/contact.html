@@ -6,16 +6,15 @@
 {% endblock %}
 
 {% block content %}
-   <section>
+   <section id="hire">
     <h1>Contact Me </h1>
  
         <form method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
         <div class="field">
             {{ form.as_p }}
         </div>
-        
-        <button type="submit" class="success button">Save</button>
+        <input class="button" type="submit" value="Send" />
     </form>
     </section>
-    <
+
 {% endblock %}

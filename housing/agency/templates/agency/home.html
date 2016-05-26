@@ -9,6 +9,7 @@
 
             <!-- Foundation css -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css">
+        <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/png">
         <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
@@ -52,20 +53,23 @@
 </div>
 <div class="extendedrow intro">
     <img src="{% static 'img/bg-3.jpg' %}">
+    <p> GO AHEAD AND FIND YOUR DREAM HOUSE </p>
     <div class="search">
         <label class="buy"> <button type="button" class="button">Buy</button> </label> 
         <label class="rent"> <button type="button" class="button">Rent</button> </label> 
-        <input type="search" placeholder="Search">
-        <a href="{% url 'home' %}"> <label class="start"> <button type="button" class="button">START</button></label></a>
+        <form>
+            <input type="text" name='q' placeholder="Search" value="{{ request.GET.q }}">
+        </form>
+        
+       <!--  <button type="submit" value="search"> </button> -->
+        
+        <!-- <a href="{% url 'home' %}"> <label class="start"> <button type="button" class="button">START</button></label></a> -->
+         <label class="start"> <button type="submit" value="search" class="button">START</button></label>
     </div>
     
 
 </div>
-<!-- <div class="content"> -->
-<!-- <button type="button" class="success button"></button> -->
-<p> hjonj</p>  
-</div>
-
+        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- Jquery js -->
         <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>

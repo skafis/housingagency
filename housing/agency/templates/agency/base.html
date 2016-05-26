@@ -9,6 +9,7 @@
 
             <!-- Foundation css -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css">
+        <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/png">
         <link rel="stylesheet" href="{% static 'css/normalize.min.css' %}">
         <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
@@ -24,15 +25,12 @@
           <h1 class="main-header">Housing Agency</h1>
           <ul class="header-subnav">
             <li><a href="{% url 'home' %}" class="is-active">Home</a></li>
+            {% if request.user.is_authenticated %}
             <li><a href="{% url 'add' %}">Add new</a></li>
+            {% endif %}
             <!-- <li><a target="_blank" href="https://github.com/skafis">About us</a></li> -->
             <li><a href="{% url 'contact' %}">Contact us</a></li>          
-            <!-- {% if request.user.is_authenticated %}
-            <li><a href="{% url 'account_logout' %}">Logout</a></li>
-            {% else %}
-            <li><a href="{% url 'account_login' %}">Login</a></li>
-            <li><a href="{% url 'account_signup' %}">SignUp</a></li>
-            {% endif %} -->
+           
             <div class="top-bar-right">
       <ul class="menu">
         {% if request.user.is_authenticated %}
@@ -61,13 +59,13 @@
         <a href="{% url 'home' %}">Home</a>
         <a href="#">About</a>
         <a href="#">Faq</a>
-        <a href="#">Contact</a>
+        <a href="{% url 'contact' %}">Contact</a>
       </p>
       <p class="copywrite"> © 2016</p>
     </div>
     <div class="small-12 medium-6 large-4 columns">
       <ul class="contact">
-        <li><p><i class="fi-marker"></i><a href = "https://github.com/skafis"> skafis.github.io </p></li>
+        <li><p><i class="fi-marker"></i><a href = "#"> skafis.github.io </p></li>
         <li><p><i class="fi-telephone"></i>+254731645955</p></li>
         <li><p><i class="fi-mail"></i>franciskipchumba5@gmail.com</p></li>
       </ul>
@@ -84,7 +82,7 @@
     </div>
   </div>
 </footer>
-
+        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- Jquery js -->
         <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>

@@ -10,6 +10,7 @@ except:
     
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Houses
+from django.db.models import Q
 from .forms import add_houseForm, contactForm
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 
@@ -19,6 +20,14 @@ def intro_page (request):
 
 def home_page(request):
     view = Houses.objects.order_by('-timestamp')
+    query = request.GET.get("q")
+    if query:
+        view = view.filter(
+            Q(name__icontains=query) |
+            Q(description__icontains=query) |
+            Q(location__icontains=query) |
+            Q(bedrooms__icontains=query)
+            ).distinct()
     context = {
         'view': view
     }
