@@ -28,6 +28,7 @@ def home_page(request):
             Q(location__icontains=query) |
             Q(bedrooms__icontains=query)
             ).distinct()
+        return render(request, 'agency/index.html', context)
     context = {
         'view': view
     }
