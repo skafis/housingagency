@@ -54,9 +54,13 @@
 <div class="extendedrow intro">
     <img src="{% static 'img/bg-1.jpg' %}">
     <p> GO AHEAD AND FIND YOUR DREAM HOUSE </p>
-    <div class="search">
+    <div class="search"><!-- 
         <label class="buy"> <button type="button" class="button">Buy</button> </label> 
-        <label class="rent"> <button type="button" class="button">Rent</button> </label> 
+        <label class="rent"> <button type="button" class="button">Rent</button> </label>  -->
+        <div class="button-group" data-grouptype="OR">
+          <button href="#" class="large button primary radius">Rent</button>
+          <button href="#" class="large button success radius">Buy</button>
+        </div>
         <form>
             <input type="text" name='q' placeholder="Search" value="{{ request.GET.q }}">
         </form>

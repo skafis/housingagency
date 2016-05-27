@@ -265,28 +265,30 @@ footer
 .intro input {
     position: absolute;
     height: 3rem;
-    top: 50%;
+    top: 55%;
     left: 50%;
-    width: 50rem;
+    width: 43rem;
     transform: translate(-50%, -50%);
 }
 
 .search .buy .button {
     position: absolute;
-    height: 3rem;
-    width: 25rem;
-    top: 43%;
+    height: 1rem;
+    width: 26rem;
+    top: 41%;
     left: 37%;
+    padding-bottom: 3rem;
     border-right: : solid;
     transform: translate(-50%, -50%);
 }
 
 .search .rent .button {
     position: absolute;
-    height: 3rem;
-    width: 25rem;
-    top: 43%;
+    height: 1rem;
+    width: 26rem;
+    top: 41%;
     left: 63%;
+    padding-bottom: 3rem;
     border-left: solid;
     transform: translate(-50%, -50%);
 }
@@ -297,4 +299,29 @@ footer
     height: 3rem;
     top: 80%;
     left: 45%;
+}
+
+.button-group {
+  position: absolute;
+  display: inline-block;
+  margin: 1rem 0; 
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  .button-group:before {
+    content: attr(data-grouptype);
+    z-index: 99999;
+    color: #999;
+    display: block;
+    font-size: 1rem;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    left: 47.5%;
+    top: 0.35rem; 
+}
+.button-group button{
+    width: 21rem;
 }
