@@ -34,7 +34,7 @@ class Houses(models.Model):
     def get_absolute_url(self):
         return reverse("post", kwargs={'slug': self.slug})
 
-def  create_slug(instance,new_slug = None):
+def create_slug(instance,new_slug = None):
     slug = slugify(instance.name)
     if new_slug is not None:
         slug = new_slug

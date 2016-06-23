@@ -2,22 +2,19 @@
 {% load staticfiles %}
 {% load urlify%}
 {% block content %}
-<div class="row details">
-<div class="small-12 large-6 columns">
-	<img src="{{ view.picture.url }}"><br>
-</div>
-<div class="small-12 large-6 columns">
-	<h1>{{ view.name}}</h1> <br>
-	<p>{{ view.description}}</p><br>
-	<p> it is a {{ view.bedrooms }} bedroom house and located on {{ view.location}}<p>
-	<p> the house costs ${{ view.price}} <br>
-	
-</div>
-
-<!-- {{ view.description|truncatechars:10 |urlify }} -->
-
-<!-- {{share_string}} -->
-<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">share on facebok</a>
-
-<button> Edit</button>
-{% endblock content %}
+	<div class="row details">
+		<div class="small-12 large-6 columns">
+			<img src="{{ view.picture.url }}"><br>
+		</div>
+		<div class="small-12 large-6 columns">
+			<h1>{{ view.name}}</h1> <br>
+			<p>{{ view.description}}</p><br>
+			<p> it is a {{ view.bedrooms }} bedroom house and located on {{ view.location}}<p>
+				<p> the house costs ${{ view.price}} <br>
+					
+				</div>
+				<!-- {{ view.description|truncatechars:10 |urlify }} -->
+				<!-- {{share_string}} -->
+				<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">share on facebok</a>
+				<button href="{% url 'home' %}" class="button"> Edit</button>
+			{% endblock content %}

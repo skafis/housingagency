@@ -1,22 +1,20 @@
 {% extends 'agency/base.html' %}
 {% load staticfiles %}
-
 {% block content %}
-
-<div class="extended row">
-  {% for item in view %}
-    <div class="small-6 large-3 columns">
-      <div class="item-wrapper">
-        <div class="thumbnail img-wrapper">
-          <a class="button expand add-to-cart">contact</a>
-          <!-- <a href="#"><img src="http://i.imgur.com/Mcw06Yt.png"></a> -->
-          <a href="{{ item.get_absolute_url }}"><img class="thumbnail" src="{{ item.picture.url }}"></a>
+  <div class="extended row">
+    {% for item in view %}
+      <div class="small-6 large-3 columns">
+        <div class="item-wrapper">
+          <div class="thumbnail img-wrapper">
+            <a class="button expand add-to-cart">contact</a>
+            <!-- <a href="#"><img src="http://i.imgur.com/Mcw06Yt.png"></a> -->
+            <a href="{{ item.get_absolute_url }}"><img class="thumbnail" src="{{ item.picture.url }}"></a>
+          </div>
+          <a href="{{ item.get_absolute_url }}"><h3> {{ item.name }}</h3></a>
+          <h5>${{ item.price }}</h5>
+          <p>{{ item.location }}</p>
         </div>
-        <a href="{{ item.get_absolute_url }}"><h3> {{ item.name }}</h3></a>
-        <h5>${{ item.price }}</h5>
-        <p>{{ item.location }}</p>
       </div>
-    </div>
-  {% endfor %}
-{% endblock content %}
-    </div>
+    {% endfor %}
+  {% endblock content %}
+</div>
