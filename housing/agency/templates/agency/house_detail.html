@@ -9,12 +9,16 @@
 		<div class="small-12 large-6 columns">
 			<h1>{{ view.name}}</h1> <br>
 			<p>{{ view.description}}</p><br>
-			<p> it is a {{ view.bedrooms }} bedroom house and located on {{ view.location}}<p>
-				<p> the house costs ${{ view.price}} <br>
-					
-				</div>
-				<!-- {{ view.description|truncatechars:10 |urlify }} -->
-				<!-- {{share_string}} -->
-				<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">share on facebok</a>
-				<button href="{% url 'home' %}" class="button"> Edit</button>
-			{% endblock content %}
+			<p> it is a {{ view.bedrooms }} bedroom house and located on {{ view.location}}</p>
+			<p> the house costs ${{ view.price}} <br></p>
+			
+		</div>
+		<!-- {{ view.description|truncatechars:10 |urlify }} -->
+		<!-- {{share_string}} -->
+		<a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}"><i class="fi-social-facebook medium"></i></a>
+		<!-- <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}"> <i class="fi-social-facebook">share on facebok</a> -->
+		{% if request.user.is_authenticated %}
+			<button href="{% url 'home' %}" class="button"> Edit</button>
+		{% endif %}
+	{% endblock content %}
+</div>

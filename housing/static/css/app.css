@@ -325,3 +325,7 @@ footer
 .button-group button{
     width: 21rem;
 }
+
+.details a i .medium{
+    font-size: 1.3rem;
+}
